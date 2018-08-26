@@ -10,9 +10,15 @@ class Singleton(type):
         return cls_self._instances[cls_self]
 
 
+class TopicTrendsManager(object):
+    __metaclass__ = Singleton
+
+    def __init__(self):
+        self.topics = []
+
 def main():
 
-    while True :
+    #while True :
 
 
 if __name__ == '__name__':
