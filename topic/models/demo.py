@@ -1,5 +1,6 @@
 import threading
 import time
+import multiprocessing
 
 class Singleton(type):
     _instances = []
@@ -15,9 +16,13 @@ class TopicTrendsManager(object):
 
     def __init__(self):
         self.topics = []
+        self.lock = threading.Lock()
+        self.parent_conn, self.child_conn = multiprocessing.Pipe()
+
 
 def main():
 
+    topic_trends = TopicTrendsManager()
     #while True :
 
 
