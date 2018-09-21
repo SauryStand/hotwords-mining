@@ -16,3 +16,19 @@ def get_features(data, postags):
 def main():
     train_data, train_target, train_pos = read_train_data('2013')
     train_feature = get_features(train_data, train_pos)
+
+    clf = LogisticRegression(C=0.01105)
+    clf.fit(train_feature, train_target)
+
+
+    ngram = Ngrams()
+    lexicon = Lexicon()
+    joblib.dump(clf, 'models_save/classifier')
+    joblib.dump(ngram, 'models_save/ngrams')
+    joblib.dump(lexicon, 'models_save/lexicon')
+
+    for name, test_data, test_target, test_pos in read_all_test_data():
+        #todo
+
+if __name__ == '__main__':
+    main()
