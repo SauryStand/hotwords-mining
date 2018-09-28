@@ -11,7 +11,7 @@ class SentimentJudge(object):
             predicted = s.predict(test_data)
             print np.sum(predicted == _test_target), len(_test_target), np.mean(predicted == _test_target)
     """
-    __metaclass__ = Singleton
+    __metaclass__ = Singletongit
 
 
 
