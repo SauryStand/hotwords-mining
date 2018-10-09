@@ -12,6 +12,9 @@ import pymongo
 from scipy.special import gammaln, psi
 from Corpus import Corpus
 
+def float_2_decimals(x):
+    return int(x * 100 + 0.05) / 100.
+
 
 def chunkize_serial(iterable, chunksize, as_numpy=True):
     """
@@ -39,7 +42,7 @@ class OnlineLDA(object):
     Implements online VB for LDA as described in (Hoffman et al. 2010).
     Base on Gensim and Hoffman's code.
     """
-    #do not change its config
+    # paran
     def __init__(self, corpus, K=10, C=0.5, tau0=1.0, kappa=0.5, iterations=50, passes=1,
                  gamma_threshold=0.001, chunk_size=3000):
         """
@@ -77,6 +80,7 @@ class OnlineLDA(object):
         self.passes = passes
 
         self.update()
+
 
     def inference(self, chunk):
         """
@@ -154,6 +158,7 @@ class OnlineLDA(object):
 def float_2_decimals(x):
     return int(x * 100 + 0.05) / 100.
 
+
 def dirichlet_expectation(alpha):
     """
         For a vector theta ~ Dir(alpha), computes E[log(theta)] given alpha.
@@ -176,6 +181,8 @@ def main():
             {'$project': {'text': 1, 'date': 1}},
         ])
 
+        
 if __name__ == '__main__':
     main()
+
 

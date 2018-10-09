@@ -1,4 +1,6 @@
-
+from sklearn import metrics
+from sklearn.externals import joblib
+from sklearn.linear_model import LogisticRegression
 
 def get_features(data, postags):
     """
@@ -29,6 +31,11 @@ def main():
 
     for name, test_data, test_target, test_pos in read_all_test_data():
         #todo
+        print '\n\n\n\n\n--------Now is {} --------\n\n'.format(name)
+        test_feature = get_features(test_data, test_pos)
+        predicted = clf.predict(test_feature)
+        print "Classification report for  %s:\n%s\n" % (clf,
+                                                        metrics)
 
 if __name__ == '__main__':
     main()
