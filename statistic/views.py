@@ -11,3 +11,8 @@ def hashtag_timeline(request):
         'hashtag': request.GET.get('hashtag'),
     }
     return render(request, 'statistic/hashtag_timeline.html', res)
+
+
+def hashtag_pie_data(request):
+    res = pie.get_hashtag_pie_data_by_date()
+    return HttpResponse(json.dumps(res), content_type="application/json")

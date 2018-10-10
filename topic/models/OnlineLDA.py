@@ -180,6 +180,45 @@ def main():
             {'$sort': {'date': 1}},
             {'$project': {'text': 1, 'date': 1}},
         ])
+        return cursor
+
+    def get_remote_data():
+        client = pymongo.MongoClient(host='59.77.134.176')
+        db = client.twitter3
+        cursor = db.stream.aggregate([
+            # {'$sort': {'date': 1}},
+            {'$project': {'text': 1}},
+        ])
+        return cursor
+
+    cursor = get_data()
+    print 'calculate_entropy 多个词只算1次'
+    olda = None
+    reallen = 0
+    # for chunk_no, doc_chunk in enumerate(cursor_serial(cursor, 3000)):
+    for chunk_no, doc_chunk in enumerate(chunkize_serial(cursor, 3000, as_numpy=False)):
+        print doc_chunk[0]['date']
+        doc_chunk = [tweet['text'] for tweet in doc_chunk]
+
+        reallen += len(doc_chunk)
+
+        print chunk_no, reallen - len(doc_chunk), reallen, len(doc_chunk), 'lda'
+        start = datetime.datetime.now()
+        if not olda:
+            corpus = Corpus(doc_chunk)
+            olda = OnlineLDA(corpus, K=10)
+        else:
+            olda.fit(doc_chunk)
+        # Give them to online LDA
+
+        print datetime.datetime.now() - start
+        with codecs.open(r'G:\test18.out', "w", "utf-8-sig") as f:
+            for topic_id, (topic_likelihood, topic_words, topic_tweets) in olda.get_lda_info():
+                print '{}%\t{}'.format(round(topic_likelihood * 100, 2), topic_words)
+                print '\t', topic_tweets
+                f.write(topic_tweets + '\n')
+
+        print '\n\n\n\n\n\n'
 
         
 if __name__ == '__main__':
