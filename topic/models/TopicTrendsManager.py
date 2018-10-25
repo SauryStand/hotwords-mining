@@ -5,27 +5,20 @@
 import threading
 import multiprocessing
 import time
-from twittermining.model_p.Singleton import Singleton
-from twittermining.model_p.twitterApi.LocalStream import LocalStream
-from twittermining.model_p.twitterApi.Stream import TwitterStream
+from twitterDataMining.model_p.Singleton import Singleton
+from twitterDataMining.model_p.twitterApi.LocalStream import LocalStream
+from twitterDataMining.model_p.twitterApi.Stream import TwitterStream
 from topic.models.Corpus import Corpus
 from topic.models.OnlineLDA import OnlineLDA
 
-
 class TopicTrendsManager(object):
     __metaclass__ = Singleton
-
     def __init__(self, param):
         self.param = param
         self.topics = []
         self.lock = threading.Lock()
         self.parent_conn, self.child_conn = multiprocessing.Pipe()
-
-        # self.topic_trends = TopicTrends(param, self.child_conn)
-        # self.topic_trends.start()
-
         self.topic_trends = None
-
         topic_trends_get = threading.Thread(target=self.receive_lda_result)
         topic_trends_get.start()
 
@@ -36,7 +29,6 @@ class TopicTrendsManager(object):
         :return: topic_list or None
         """
         res = None
-
         if not self.topic_trends:
             self.topic_trends = TopicTrends(param, self.child_conn)
             self.topic_trends.start()
@@ -129,7 +121,6 @@ class TopicTrends(multiprocessing.Process):
     def do_some_from_data(self, tweets):
         print 'total_tweets', len(tweets)
         # DO something from tweets
-
         # doc_chunk = [tweet['text'] for tweet in tweets]
         print len(tweets)
         if not self.olda:
