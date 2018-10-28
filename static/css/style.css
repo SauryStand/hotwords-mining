@@ -1,0 +1,421 @@
+.body {
+    font-family: Lato, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.index_hearder .header_info {
+    position: absolute;
+    z-index: 5000;
+    top: 250px;
+    left: 250px;
+    /*background: rgba(1, 1, 1, 0.2);*/
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.index_hearder .header_info h1 {
+    font-size: 38px;
+    line-height: 56px;
+    margin-bottom: 40px;
+}
+
+.index_hearder #header_info_button {
+    margin-top: 20px;
+    background: #20354E;
+    color: #fff;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 14px 28px 13px 28px;
+    line-height: 1;
+    border: 2px solid #20354E;
+    font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav .menu {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+
+.overlay-bar .menu li a {
+    color: #fff;
+}
+
+nav .menu li {
+    float: left;
+    margin-right: 76px;
+    position: relative;
+    list-style: none;
+}
+
+nav .menu li a {
+    font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #777777;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    padding: 0 0 40px 0;
+    display: inline-block;
+    line-height: 14px;
+}
+
+.top-bar {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    z-index: 10;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    line-height: 0;
+    top: 0;
+    color: #fff;
+}
+
+.overlay-bar {
+    background: none;
+}
+
+.overlay-bar .menu li a, .navbar-brand a {
+    color: #fff;
+}
+
+.overlay-bar .menu li a:hover, .navbar-brand a:hover {
+    color: #fff;
+    background: none;
+    text-decoration: none;
+}
+
+.overlay-bar .menu > li.disabled > a {
+    color: #bbb;
+}
+
+.nav-menu {
+    padding-top: 40px;
+}
+
+.page-header {
+    margin: 0;
+    padding: 160px 0 139px 0;
+    border-bottom: none;
+}
+
+.page-header:before, .page-head-image:before, .carousel .carousel-inner .item:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    content: '';
+    opacity: 0.3;
+    z-index: 2;
+    background-color: #333333;
+}
+
+.carousel .carousel-inner .item:before {
+    opacity: 0.6;
+}
+
+.page-header h1 {
+    font-size: 44px;
+    margin-top: 0;
+    margin-bottom: 26px;
+    font-weight: 300;
+    line-height: 44px;
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+
+.page-header p.lead {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: "Comic Sans MS", "Consolas", cursive, sans-serif;
+}
+
+.colored-background {
+    background-color: #182731;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+
+}
+
+header .container {
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.carousel .carousel-inner .item {
+    height: 700px;
+}
+
+.background-image-holder {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover !important;
+    z-index: 0;
+    background-position: 50% 50% !important;
+}
+
+.carousel .carousel-inner .item .background-image-holder {
+    top: 0;
+}
+
+section:nth-of-type(odd) {
+    background: #f4f4f4;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+section h1 {
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
+
+section h6 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+section p.lead {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.image-section, section .visualization {
+    /*margin-top:40px;*/
+    max-width: 450px;
+}
+
+section form {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+section .hide {
+    display: none;
+}
+
+section .coeff .dot {
+    fill: hsla(207, 63%, 27%, 0.2);
+}
+
+section .coeff.last .dot {
+    fill: hsla(207, 63%, 27%, 1.0);
+}
+
+section .coeff .circle {
+    fill: none;
+    stroke: hsl(0, 0%, 70%);
+}
+
+section .coeff.first .circle {
+    fill: none;
+    stroke: hsl(0, 0%, 30%);
+}
+
+section .coeff.last .circle {
+    display: none;
+}
+
+section .graph {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+section .trace {
+    fill: none;
+    stroke: steelblue;
+}
+
+section .proj {
+    fill: none;
+    stroke: #000;
+}
+
+section .axis {
+    stroke: hsl(0, 0%, 70%);
+}
+
+.footer {
+    background-color: #282e33;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.footer h2 {
+    opacity: 0.5;
+    color: #fff;
+
+}
+
+.footer .footer-header {
+    font-size: 30px;
+    color: #eee;
+    opacity: 0.6;
+}
+
+.footer .fa {
+    font-size: 36px !important;
+}
+
+.footer .keywords-wrap {
+    max-width: 450px;
+    /*margin:0 auto;*/
+}
+
+.footer .table {
+    font-family: "Microsoft YaHei UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    color: #eee;
+    opacity: 0.6;
+
+}
+
+.footer .table td {
+    border-top: none;
+}
+
+.footer .keywords span {
+    float: right;
+}
+
+.copyright {
+    opacity: 0.5;
+    color: #fff;
+    font-size: 12px;
+}
+
+.copyright a {
+    color: #aaa;
+    font-weight: 600;
+}
+
+/* Topic page */
+#topicText p {
+    text-indent: 2em
+}
+
+#streamParameters .paramDiv {
+    padding-right: 40px;
+}
+
+#streamParameters .border-left {
+    border-left: 1px dashed #eee;
+    padding-left: 30px !important;
+}
+
+#streamParameters .panel-body input {
+    margin-bottom: 15px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+#topicToolBar {
+    position: fixed;
+    bottom: 1%;
+    z-index: 1000;
+}
+
+/*topic tool bar*/
+#topicToolBar ul.nav-tabs {
+    margin-top: 20px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+}
+
+#topicToolBar ul.nav-tabs li {
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+
+#topicToolBar ul.nav-tabs li:first-child {
+    border-top: none;
+}
+
+#topicToolBar ul.nav-tabs li a {
+    margin: 0;
+    padding: 8px 16px;
+    border-radius: 0;
+}
+
+#topicToolBar ul.nav-tabs li.active a, #topicToolBar ul.nav-tabs li.active a:hover {
+    color: #fff;
+    background: #0088cc;
+    border: 1px solid #0088cc;
+}
+
+#topicToolBar ul.nav-tabs li:first-child a {
+    border-radius: 4px 4px 0 0;
+}
+
+#topicToolBar ul.nav-tabs li:last-child a {
+    border-radius: 0 0 4px 4px;
+}
+
+#topicToolBar ul.nav-tabs .affix, #topicToolBar ul.nav-tabs.affix-bottom {
+    top: 30px; /* Set the top position of pinned element */
+    width: 100%;
+}
+
+#topicToolBar .switch {
+    float: right;
+}
+
+.btn-color {
+    background-color: #386674;
+    border-color: #386674;
+}
+
+#sample_result .panel {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .05);
+}
+
+#sample_result .lead {
+    font-size: 17px;
+}
+
+#sample_result .list-group li {
+    background-color: #f9f9f9;
+}
+
+#instruction {
+    padding-left: 60px;
+}
+
+#instruction > div > div h4 {
+    margin-bottom: 20px;
+}
+
+.font-family-yahei {
+    font-family: "Microsoft YaHei UI", sans-serif;
+}
